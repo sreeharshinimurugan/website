@@ -1,3 +1,4 @@
+HTML
 
 <!DOCTYPE html>
 <html lang="en">
@@ -801,4 +802,947 @@
 
         .project-card::after {
             content: "";
-         
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.4s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-7px);
+            border-color: rgba(212, 175, 55, 0.6);
+            box-shadow: 0 14px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-card:hover::after {
+            width: 100%;
+        }
+
+        .project-top {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .project-number {
+            color: var(--gold);
+            font-size: 12px;
+            letter-spacing: 2px;
+        }
+
+        .project-symbol {
+            color: var(--gold);
+            font-size: 23px;
+        }
+
+        .project-card h3 {
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            flex-grow: 1;
+            color: var(--muted);
+            font-size: 12px;
+            margin-bottom: 20px;
+        }
+
+        .project-tag {
+            padding: 5px 10px;
+            color: var(--gold);
+            font-size: 10px;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+        }
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact-intro {
+            color: var(--muted);
+            font-size: 14px;
+            max-width: 600px;
+            margin-top: -15px;
+            margin-bottom: 32px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .contact-card {
+            padding: 28px 20px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            text-align: center;
+            transition: 0.3s ease;
+            overflow-wrap: anywhere;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--gold);
+            box-shadow: 0 10px 28px rgba(212, 175, 55, 0.07);
+        }
+
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 17px;
+            border: 1px solid #514522;
+            border-radius: 8px;
+            color: var(--gold);
+            font-size: 19px;
+            font-weight: 600;
+        }
+
+        .contact-card h3 {
+            font-size: 17px;
+            margin-bottom: 8px;
+        }
+
+        .contact-card p {
+            color: var(--muted);
+            font-size: 12px;
+            margin-bottom: 15px;
+        }
+
+        .contact-card a {
+            color: var(--gold);
+            text-decoration: none;
+            font-size: 12px;
+        }
+
+        .contact-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            padding: 30px 20px;
+            text-align: center;
+            border-top: 1px solid #222;
+            color: #777;
+            font-size: 12px;
+        }
+
+        footer p + p {
+            margin-top: 5px;
+        }
+
+        .back-top {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            z-index: 500;
+            width: 42px;
+            height: 42px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #15130c;
+            color: var(--gold);
+            border: 1px solid var(--border);
+            border-radius: 7px;
+            text-decoration: none;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: 0.3s;
+        }
+
+        .back-top.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        /* =========================
+           RESPONSIVE DESIGN
+        ========================= */
+
+        @media (max-width: 950px) {
+            .hero {
+                gap: 30px;
+                grid-template-columns: 1.2fr 0.8fr;
+            }
+
+            .hero-image-wrap {
+                width: 260px;
+                height: 320px;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .projects-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 700px) {
+            html {
+                scroll-padding-top: 75px;
+            }
+
+            .container {
+                padding-left: 22px;
+                padding-right: 22px;
+            }
+
+            .navbar {
+                padding: 15px 22px;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 68px;
+                left: 18px;
+                right: 18px;
+                display: none;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                padding: 12px;
+                background: #111;
+                border: 1px solid #38301a;
+                border-radius: 9px;
+                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            }
+
+            .nav-links.show {
+                display: flex;
+                animation: menuEnter 0.2s ease;
+            }
+
+            @keyframes menuEnter {
+                from {
+                    opacity: 0;
+                    transform: translateY(-6px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 11px 12px;
+            }
+
+            .nav-contact {
+                border: none;
+            }
+
+            .menu {
+                display: block;
+            }
+
+            .hero {
+                min-height: auto;
+                padding: 120px 22px 75px;
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 45px;
+            }
+
+            .hero-content {
+                order: 2;
+            }
+
+            .hero-image-wrap {
+                order: 1;
+                width: 235px;
+                height: 275px;
+            }
+
+            .hero h1 {
+                font-size: clamp(43px, 10vw, 60px);
+                letter-spacing: -1px;
+            }
+
+            .hero-description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .college-pill {
+                justify-content: center;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .floating-tag {
+                right: -17px;
+            }
+
+            .floating-year {
+                left: -17px;
+            }
+
+            .section {
+                padding-top: 75px;
+                padding-bottom: 75px;
+            }
+
+            .section-heading {
+                margin-bottom: 30px;
+            }
+
+            .about-grid,
+            .projects-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-card {
+                min-height: 245px;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skill-card {
+                min-height: auto;
+            }
+
+            .section-heading h2 {
+                font-size: 30px;
+            }
+
+            .panel {
+                padding: 23px;
+            }
+
+            .floating-tag,
+            .floating-year {
+                font-size: 10px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                scroll-behavior: auto !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="ambient one"></div>
+    <div class="ambient two"></div>
+
+    <!-- NAVIGATION -->
+
+    <header>
+        <nav class="navbar">
+
+            <a href="#home" class="logo">Sree<span>.</span></a>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact" class="nav-contact">Contact Me</a></li>
+            </ul>
+
+            <button class="menu"
+                    type="button"
+                    aria-label="Toggle navigation"
+                    aria-expanded="false">☰</button>
+
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- HERO -->
+
+        <section id="home" class="hero">
+
+            <div class="hero-content">
+
+                <div class="hero-label">
+                    <span class="status-dot"></span>
+                    WELCOME TO MY PORTFOLIO
+                </div>
+
+                <h1>
+                    Sree <span class="gradient-text">Harshini.</span>
+                </h1>
+
+                <h2 class="hero-subtitle">
+                    Computer Science Student
+                </h2>
+
+                <p class="hero-description">
+                    I am passionate about technology, programming and
+                    creative digital experiences. I enjoy learning new
+                    concepts, solving problems and turning ideas into
+                    practical projects.
+                </p>
+
+                <div class="college-pill">
+                    <span class="gold">✦</span>
+                    Bishop Heber College
+                    <span class="separator">|</span>
+                    2026–2029
+                </div>
+
+                <div class="buttons">
+                    <a href="#projects" class="btn">
+                        Explore My Work ↗
+                    </a>
+
+                    <a href="#contact" class="btn btn-outline">
+                        Let's Connect
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="hero-image-wrap">
+
+                <div class="photo-frame">
+
+                    <!--
+                    Upload your photograph to GitHub as profile.jpg.
+                    If the image is missing, SH initials appear automatically.
+                    -->
+
+                    <div class="photo-fallback" id="photoFallback">
+                        SH
+                        <small>SREE HARSHINI</small>
+                    </div>
+
+                    <img
+                        src="images/profile.jpg"
+                        alt="Sree Harshini"
+                        class="profile-photo"
+                        id="profilePhoto"
+                        style="display:none;"
+                    >
+
+                </div>
+
+                <div class="photo-corner"></div>
+
+                <div class="floating-tag">
+                    ✦ Aspiring Developer
+                </div>
+
+                <div class="floating-year">
+                    B.Sc. CS · 2026–2029
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ABOUT -->
+
+        <section id="about" class="section container">
+
+            <div class="section-heading reveal">
+                <p class="eyebrow">GET TO KNOW ME</p>
+                <h2>About <span class="gold">Me.</span></h2>
+                <p>
+                    A little about my journey, interests and goals.
+                </p>
+                <span class="gold-line"></span>
+            </div>
+
+            <div class="about-grid">
+
+                <div class="panel about-copy reveal">
+
+                    <p>
+                        I am a B.Sc. Computer Science student at
+                        Bishop Heber College, interested in programming,
+                        web development and creative digital work.
+                    </p>
+
+                    <p>
+                        I enjoy learning new technologies, practising
+                        coding and developing projects that help me
+                        strengthen my technical and problem-solving skills.
+                    </p>
+
+                    <p>
+                        My goal is to build a strong foundation in
+                        computer science and continue growing through
+                        practical experience, collaboration and learning.
+                    </p>
+
+                </div>
+
+                <div class="panel education-highlight reveal reveal-delay-1">
+
+                    <p class="info-label">CURRENT EDUCATION</p>
+
+                    <h3>B.Sc. Computer Science</h3>
+
+                    <p class="college-name">Bishop Heber College</p>
+
+                    <p class="degree">Undergraduate Degree</p>
+
+                    <p class="academic-year">
+                        Academic Year: 2026–2029
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- EDUCATION TIMELINE -->
+
+        <section id="education" class="section container">
+
+            <div class="section-heading reveal">
+                <p class="eyebrow">MY JOURNEY</p>
+                <h2>Education <span class="gold">Timeline.</span></h2>
+                <p>
+                    My academic journey and current learning path.
+                </p>
+                <span class="gold-line"></span>
+            </div>
+
+            <div class="timeline">
+
+                <div class="timeline-item reveal">
+
+                    <span class="timeline-dot"></span>
+
+                    <div class="timeline-card">
+
+                        <p class="timeline-date">
+                            2026 – 2029
+                        </p>
+
+                        <h3>B.Sc. Computer Science</h3>
+
+                        <p>
+                            Bishop Heber College
+                        </p>
+
+                        <p>
+                            Developing knowledge in programming,
+                            data structures, algorithms and computing.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="timeline-item reveal reveal-delay-1">
+
+                    <span class="timeline-dot"></span>
+
+                    <div class="timeline-card">
+
+                        <p class="timeline-date">
+                            CONTINUOUS LEARNING
+                        </p>
+
+                        <h3>Technical Skills &amp; Projects</h3>
+
+                        <p>
+                            Practising C programming, HTML, CSS and Python
+                            while building personal and academic projects.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <p class="timeline-note">
+                The timeline shows your current degree and ongoing
+                learning; add earlier school details whenever you wish.
+            </p>
+
+        </section>
+
+        <!-- SKILLS -->
+
+        <section id="skills" class="section container">
+
+            <div class="section-heading reveal">
+                <p class="eyebrow">WHAT I WORK WITH</p>
+                <h2>My Technical <span class="gold">Skills.</span></h2>
+                <p>
+                    Technologies I am learning and practising.
+                </p>
+                <span class="gold-line"></span>
+            </div>
+
+            <div class="skills-grid">
+
+                <div class="skill-card reveal">
+
+                    <div class="skill-icon">C</div>
+
+                    <h3>C Programming</h3>
+
+                    <p>
+                        Programming fundamentals, functions,
+                        structures and logical problem-solving.
+                    </p>
+
+                    <span class="skill-level">PROGRAMMING</span>
+
+                </div>
+
+                <div class="skill-card reveal reveal-delay-1">
+
+                    <div class="skill-icon">&lt;/&gt;</div>
+
+                    <h3>HTML</h3>
+
+                    <p>
+                        Building structured web pages using
+                        semantic HTML elements.
+                    </p>
+
+                    <span class="skill-level">WEB STRUCTURE</span>
+
+                </div>
+
+                <div class="skill-card reveal reveal-delay-2">
+
+                    <div class="skill-icon">CSS</div>
+
+                    <h3>CSS</h3>
+
+                    <p>
+                        Styling responsive layouts, typography
+                        and modern website interfaces.
+                    </p>
+
+                    <span class="skill-level">WEB DESIGN</span>
+
+                </div>
+
+                <div class="skill-card reveal reveal-delay-3">
+
+                    <div class="skill-icon">Py</div>
+
+                    <h3>Python</h3>
+
+                    <p>
+                        Learning programming concepts, logical
+                        thinking and problem-solving.
+                    </p>
+
+                    <span class="skill-level">PROGRAMMING</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- PROJECTS -->
+
+        <section id="projects" class="section container">
+
+            <div class="section-heading reveal">
+                <p class="eyebrow">SELECTED WORK</p>
+                <h2>Featured <span class="gold">Projects.</span></h2>
+                <p>
+                    Academic work and creative projects that reflect
+                    my interests and learning.
+                </p>
+                <span class="gold-line"></span>
+            </div>
+
+            <div class="projects-grid">
+
+                <article class="project-card reveal">
+
+                    <div class="project-top">
+                        <span class="project-number">PROJECT 01</span>
+                        <span class="project-symbol">&lt;/&gt;</span>
+                    </div>
+
+                    <h3>Bank Management System</h3>
+
+                    <p>
+                        A C programming project for basic banking
+                        operations, including account creation,
+                        deposits, withdrawals and balance enquiries.
+                    </p>
+
+                    <span class="project-tag">C Programming</span>
+
+                </article>
+
+                <article class="project-card reveal reveal-delay-1">
+
+                    <div class="project-top">
+                        <span class="project-number">PROJECT 02</span>
+                        <span class="project-symbol">✧</span>
+                    </div>
+
+                    <h3>Personal Portfolio</h3>
+
+                    <p>
+                        A responsive personal website showcasing
+                        education, skills, projects and professional
+                        contact information.
+                    </p>
+
+                    <span class="project-tag">HTML &amp; CSS</span>
+
+                </article>
+
+                <article class="project-card reveal reveal-delay-2">
+
+                    <div class="project-top">
+                        <span class="project-number">PROJECT 03</span>
+                        <span class="project-symbol">◇</span>
+                    </div>
+
+                    <h3>Creative Design Work</h3>
+
+                    <p>
+                        Creative design concepts and digital artwork
+                        that explore visual communication, style
+                        and attention to detail.
+                    </p>
+
+                    <span class="project-tag">Creative Design</span>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- CONTACT -->
+
+        <section id="contact" class="section container">
+
+            <div class="section-heading reveal">
+                <p class="eyebrow">GET IN TOUCH</p>
+                <h2>Let's <span class="gold">Connect.</span></h2>
+                <p>
+                    Interested in learning, collaborating and
+                    connecting with professionals in technology.
+                </p>
+                <span class="gold-line"></span>
+            </div>
+
+            <div class="contact-grid">
+
+                <div class="contact-card reveal">
+
+                    <div class="contact-icon">☎</div>
+
+                    <h3>Phone</h3>
+
+                    <p>Reach me by phone.</p>
+
+                    <a href="tel:+917200507767">
+                        7200507767
+                    </a>
+
+                </div>
+
+                <div class="contact-card reveal reveal-delay-1">
+
+                    <div class="contact-icon">✉</div>
+
+                    <h3>Email</h3>
+
+                    <p>Send me a message.</p>
+
+                    <a href="mailto:sreeharshinimurugan@gmail.com">
+                        Email Me
+                    </a>
+
+                </div>
+
+                <div class="contact-card reveal reveal-delay-2">
+
+                    <div class="contact-icon">in</div>
+
+                    <h3>LinkedIn</h3>
+
+                    <p>Connect professionally.</p>
+
+                    <a
+                        href="https://www.linkedin.com/in/sreeharshini-m-844931420/"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        View Profile ↗
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer>
+        <p>© 2026 Sree Harshini. All Rights Reserved.</p>
+        <p>Designed &amp; Built with care.</p>
+    </footer>
+
+    <!-- BACK TO TOP -->
+
+    <a href="#home" class="back-top" id="backTop"
+       aria-label="Back to top">↑</a>
+
+    <!-- JAVASCRIPT: NAVIGATION, PHOTO, SCROLL ANIMATIONS -->
+
+    <script>
+        document.body.classList.add("js-enabled");
+
+        // Mobile navigation
+        const menu = document.querySelector(".menu");
+        const navLinks = document.querySelector(".nav-links");
+
+        menu.addEventListener("click", function () {
+            const isOpen = navLinks.classList.toggle("show");
+
+            menu.setAttribute("aria-expanded", String(isOpen));
+            menu.textContent = isOpen ? "×" : "☰";
+        });
+
+        document.querySelectorAll(".nav-links a").forEach(function (link) {
+            link.addEventListener("click", function () {
+                navLinks.classList.remove("show");
+                menu.setAttribute("aria-expanded", "false");
+                menu.textContent = "☰";
+            });
+        });
+
+        // Profile photo with automatic initials fallback
+        const photo = document.getElementById("profilePhoto");
+        const fallback = document.getElementById("photoFallback");
+
+        function showFallback() {
+            photo.style.display = "none";
+            fallback.style.display = "flex";
+        }
+
+        photo.addEventListener("load", function () {
+            photo.style.display = "block";
+            fallback.style.display = "none";
+        });
+
+        photo.addEventListener("error", showFallback);
+
+        // Handle an image that loaded from cache
+        if (photo.complete && photo.naturalWidth > 0) {
+            photo.style.display = "block";
+            fallback.style.display = "none";
+        }
+
+        // Reveal sections when they enter the viewport
+        const revealItems = document.querySelectorAll(".reveal");
+
+        if ("IntersectionObserver" in window) {
+            const observer = new IntersectionObserver(
+                function (entries, observerInstance) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("visible");
+                            observerInstance.unobserve(entry.target);
+                        }
+                    });
+                },
+                {
+                    threshold: 0.12,
+                    rootMargin: "0px 0px -30px 0px"
+                }
+            );
+
+            revealItems.forEach(function (item) {
+                observer.observe(item);
+            });
+        } else {
+            revealItems.forEach(function (item) {
+                item.classList.add("visible");
+            });
+        }
+
+        // Highlight the active navigation link
+        const pageSections = document.querySelectorAll("main section[id]");
+        const navAnchors = document.querySelectorAll(
+            '.nav-links a[href^="#"]'
+        );
+
+        if ("IntersectionObserver" in window) {
+            const sectionObserver = new IntersectionObserver(
+                function (entries) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            navAnchors.forEach(function (anchor) {
+                                anchor.classList.toggle(
+                                    "active",
+                                    anchor.getAttribute("href") ===
+                                    "#" + entry.target.id
+                                );
+                            });
+                        }
+                    });
+                },
+                {
+                    rootMargin: "-25% 0px -60% 0px"
+                }
+            );
+
+            pageSections.forEach(function (section) {
+                sectionObserver.observe(section);
+            });
+        }
+
+        // Back-to-top button
+        const backTop = document.getElementById("backTop");
+
+        window.addEventListener("scroll", function () {
+            backTop.classList.toggle("show", window.scrollY > 400);
+        }, { passive: true });
+    </script>
+
+</body>
+</html>
